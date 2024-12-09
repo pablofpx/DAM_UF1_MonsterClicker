@@ -22,7 +22,7 @@ class UpgradeProvider {
                 R.drawable.poison,
                 "Poison flask",
                 "Poison that makes the monster drop coins",
-                10,
+                20,
                 5
             ) { monsterViewModel ->
                 monsterViewModel.passiveUpgrade(1)
@@ -32,20 +32,20 @@ class UpgradeProvider {
                 R.drawable.spellbound,
                 "Magic spellbound",
                 "Magically drops more coins...",
-                50,
+                100,
                 15
             ) { monsterViewModel ->
-                monsterViewModel.passiveUpgrade(5)
+                monsterViewModel.passiveUpgrade(10)
             },
             UpgradeItem(
                 4,
                 R.drawable.weapon_sword_upgraded,
                 "Automatic sword",
                 "Your sword hits by itself?",
-                150,
+                500,
                 200
             ) { monsterViewModel ->
-                monsterViewModel.passiveUpgrade(15)
+                monsterViewModel.passiveUpgrade(200)
             }
         )
     }

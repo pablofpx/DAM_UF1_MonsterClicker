@@ -1,5 +1,7 @@
 package com.example.monster
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
@@ -47,11 +49,13 @@ class MonsterFragment : Fragment() {
 
         viewModel.selectedMonster.observe(viewLifecycleOwner) { imageResId ->
             binding.monsterMonster.setImageResource(imageResId)
+            startMonsterAnimation()
         }
 
         monsterClicked.setOnClickListener {
             val clickValue = viewModel.clickValue.value ?: 1
             viewModel.incrementCoins(clickValue)
+            clickMonsterAnimation()
         }
 
         // opcion de borrar partida con dialog
@@ -114,5 +118,38 @@ class MonsterFragment : Fragment() {
         _binding = null
     }
 
+    fun startMonsterAnimation() {
+        val translateY = ObjectAnimator.ofFloat(binding.monsterMonster, "translationY", -10f, 10f).apply {
+            duration = 1000 // 1 segundo para completar un ciclo
+            repeatMode = ObjectAnimator.REVERSE
+            repeatCount = ObjectAnimator.INFINITE
+        }
 
+        val scaleX = ObjectAnimator.ofFloat(binding.monsterMonster, "scaleX", 1f, 1.05f).apply {
+            duration = 1000
+            repeatMode = ObjectAnimator.REVERSE
+            repeatCount = ObjectAnimator.INFINITE
+        }
+        val scaleY = ObjectAnimator.ofFloat(binding.monsterMonster, "scaleY", 1f, 1.05f).apply {
+            duration = 1000
+            repeatMode = ObjectAnimator.REVERSE
+            repeatCount = ObjectAnimator.INFINITE
+        }
+
+        AnimatorSet().apply {
+            playTogether(translateY, scaleX, scaleY)
+            start()
+        }
+    }
+    fun clickMonsterAnimation() {
+        val scaleX = ObjectAnimator.ofFloat(binding.monsterMonster, "scaleX", 1f, 1.1f, 1f)
+        val scaleY = ObjectAnimator.ofFloat(binding.monsterMonster, "scaleY", 1f, 1.1f, 1f)
+        scaleX.duration = 100 // Duración en milisegundos
+        scaleY.duration = 100
+
+        AnimatorSet().apply {
+            playTogether(scaleX, scaleY)
+            start()
+        }
+    }
 }
