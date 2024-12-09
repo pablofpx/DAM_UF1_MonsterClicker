@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/monsterFragment"
+        android:icon="@drawable/sword"
+        android:title="@string/battle" />
+    <item
+        android:id="@+id/questFragment"
+        android:icon="@drawable/magicbook"
+        android:title="@string/quests" />
+    <item
+        android:id="@+id/upgradeFragment"
+        android:icon="@drawable/anvil"
+        android:title="@string/upgrades" />
+</menu>

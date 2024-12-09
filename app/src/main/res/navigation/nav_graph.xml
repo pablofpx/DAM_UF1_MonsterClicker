@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/monsterFragment">
+
+    <fragment
+        android:id="@+id/monsterFragment"
+        android:name="com.example.monster.MonsterFragment"
+        android:label="fragment_monster"
+        tools:layout="@layout/fragment_monster" >
+        <action
+            android:id="@+id/action_monsterFragment_to_questFragment"
+            app:destination="@id/questFragment" />
+        <action
+            android:id="@+id/action_monsterFragment_to_upgradeFragment"
+            app:destination="@id/upgradeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upgradeFragment"
+        android:name="com.example.monster.UpgradeFragment"
+        android:label="fragment_upgrade"
+        tools:layout="@layout/fragment_upgrade" />
+    <fragment
+        android:id="@+id/questFragment"
+        android:name="com.example.monster.QuestFragment"
+        android:label="fragment_quest"
+        tools:layout="@layout/fragment_quest" />
+</navigation>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Monster</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="upgrades_title">Upgrades</string>
+    <string name="attack">Attack!</string>
+    <string name="coins">Coins: %d</string>
+    <string name="monster1">Patrick the mighty</string>
+    <string name="monster2">PAK</string>
+    <string name="monster3">Squiddy</string>
+    <string name="monster4">God hand</string>
+    <string name="battle">Battle</string>
+    <string name="quests">Quests</string>
+    <string name="upgrades">Upgrades</string>
+    <string-array name="upgrades_list">
+        <item></item>
+    </string-array>
+</resources>
